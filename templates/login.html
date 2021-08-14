@@ -70,17 +70,17 @@
   <body class="text-center">
     
 <main class="form-signin">
-  <form action ="login" method = "POST">
+  <form method="POST">
     {% csrf_token %}
     <img class="mb-4" src="https://icon2.cleanpng.com/20171221/czq/creative-letter-r-5a3b959fa73fb9.3434644115138543676851.jpg" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Login to C-Realms</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+      <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name='username'>
+      <label for="floatingInput">Username</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name='password'>
       <label for="floatingPassword">Password</label>
     </div>
 
