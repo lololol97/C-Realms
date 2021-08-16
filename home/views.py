@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 
+list = [User.objects.all()]
+
 def index(request):
     if request.method == "POST":
         username = request.POST['username']
@@ -10,7 +12,9 @@ def index(request):
 
         if user is not None:
             auth.login(request, user)
-            return render(request, 'home.html')
+            return render(request, 'home.html', {
+                "users": list,
+            })
         else:
             return render(request, 'login.html')
 
