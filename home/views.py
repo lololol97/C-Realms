@@ -10,7 +10,7 @@ def index(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('/')
+            return render(request, 'home.html')
         else:
             return render(request, 'login.html')
 
